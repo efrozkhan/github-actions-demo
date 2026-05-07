@@ -11,16 +11,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Show Files
-        run: ls -la
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Check Node Version
-        run: node -v
+      - name: Install Dependencies
+        run: npm install
 
       - name: Run App
         run: node app.js
