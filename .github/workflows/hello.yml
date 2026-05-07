@@ -14,5 +14,13 @@ jobs:
       - name: Show Files
         run: ls -la
 
-      - name: Print Message
-        run: echo "Hello GitHub Actions"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Check Node Version
+        run: node -v
+
+      - name: Run App
+        run: node app.js
